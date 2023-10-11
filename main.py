@@ -5,6 +5,12 @@ window.title("Mile to Km Converter")
 window.minsize(width=250, height=150)
 window.config(padx=70, pady=50)
 
+
+def button_clicked():
+    miles_total = number_of_miles.get()
+    total = float(miles_total) * 1.609
+    dynamic_label.config(text=total)
+
 # Label 1
 
 miles = Label(text="Miles")
@@ -31,16 +37,6 @@ number_of_miles = Entry(width=10)
 number_of_miles.insert(END, string="0")
 number_of_miles.grid(column=1, row=0)
 
-
-def button_clicked():
-    miles_entry = number_of_miles.get()
-    total = int(miles_entry) * 1.6
-    dynamic_label.config(text=total)
-
-
-# Button function that changes the dynamic label to represent the solution of the conversion must go after entry and before button
-
-button_clicked()
 
 calculate_button = Button(text="Calculate", command=button_clicked)
 calculate_button.grid(column=1, row=2)
